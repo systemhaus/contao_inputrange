@@ -115,4 +115,26 @@ class InputRange extends Widget
 			specialchars($this->varValue));
 	}
 	
+	/**
+	 * Custom RegEx validation of comma separated values
+	 * @param string
+	 * @param string
+	 * @param \Widget
+	 * @return boolean
+	 */
+	public function validateCommaSeparatedDigits($strRegexp, $varValue, \Widget $objWidget)
+	{
+		if ($strRegexp == 'commaseparateddigits')
+		{
+			if (!preg_match('/^(([0-9])*.)?[0-9]+(,( )*(([0-9])*.)?[0-9]+)*$/', $varValue))
+			{
+				$objWidget->addError('Field ' . $objWidget->label . ' can only contain comma separated digits');
+			}
+			
+			return true;
+		}
+		
+		return false;
+	}
+	
 }

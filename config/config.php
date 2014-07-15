@@ -15,3 +15,9 @@
  * Frontend form fields
  */
 $GLOBALS['TL_FFL']['range'] = 'InputRange';
+
+
+/**
+ * Hooks
+ */
+$GLOBALS['TL_HOOKS']['addCustomRegexp'][] = array('InputRange', 'validateCommaSeparatedDigits');
