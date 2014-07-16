@@ -109,9 +109,10 @@ class InputRange extends Widget
 	 */
 	public function generateOutput()
 	{
-		return  sprintf('<output id="output_%s" for="ctrl_%s">%s</output>',
+		return  sprintf('<output id="output_%s" for="ctrl_%s"%s>%s</output>',
 			$this->strId,
 			$this->strId,
+            (strlen($this->strClass) ? ' class="' . $this->strClass . '"' : ''),
 			specialchars($this->varValue));
 	}
 	
