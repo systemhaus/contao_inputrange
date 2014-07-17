@@ -4,9 +4,22 @@
     "description": "Provides a form field for the HTML5 input range element",
     "keywords": ["widget", "form", "range", "slider", "knob"],
     "type": "contao-module",
-    "homepage": "https://www.etes.de/",
+    "homepage": "https://github.com/systemhaus/contao_inputrange",
     "license": "LGPL-3.0",
-
+    
+    "authors": [
+        {
+            "name": "Sebastian Leitz",
+            "email": "sebastian.leitz@etes.de",
+            "homepage": "https://www.etes.de/",
+            "role": "Developer"
+        }
+    ],
+    
+    "support": {
+        "issues": "https://github.com/systemhaus/contao_inputrange/issues"
+    },
+    
     "require": {
         "contao/core": ">=3.2,<4-dev",
         "contao-community-alliance/composer-installer":"*"
