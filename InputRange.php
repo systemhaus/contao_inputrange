@@ -77,7 +77,7 @@ class InputRange extends Widget
 
 		$strBuffer = '';
 		
-		$strBuffer .= sprintf('<input type="range" name="%s" id="ctrl_%s" class="range%s" min="%s" max="%s"%s value="%s"%s%s%s>',
+		$strBuffer .= sprintf('<input type="range" name="%s" id="ctrl_%s" class="range%s" min="%s" max="%s"%s value="%s"%s>',
 			$this->strName,
 			$this->strId,
 			(strlen($this->strClass) ? ' ' . $this->strClass : ''),
@@ -85,8 +85,9 @@ class InputRange extends Widget
 			$this->maximum,
 			(strlen($this->step) ? ' step="' . $this->step . '"' : ''),
 			specialchars($this->varValue),
-			(strlen($this->datalist) ? ' list="dlist_' . $this->strId . '"' : ''),
-			' onchange="output_' . $this->strId . '.value=value"',
+			(strlen($this->datalist) ? ' list="dlist_' . $this->strId . '"' : '').
+			' onchange="output_' . $this->strId . '.value=value"'.
+			' oninput="output_' . $this->strId . '.value=value"'.
 			$this->getAttributes());
 		
 		if (strlen($this->datalist))
